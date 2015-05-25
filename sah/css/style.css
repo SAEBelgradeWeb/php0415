@@ -1,0 +1,32 @@
+.container {
+	width: 800px;
+	height: 800px;
+	border: 1px solid red;
+}
+
+.crni {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	float: left;
+	color: white;
+}
+
+
+.plavi {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	float: left;
+	color: white;
+}
+.beli {
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	float: left;
+	font-size: 32px;
+	text-align: center;
+	/*border: 1px dashed black;
+	line-height: 100px;*/
+}
