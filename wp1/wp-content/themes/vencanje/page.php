@@ -1,35 +1,40 @@
 <?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package vencanje
- */
+
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	 <!-- BEFORE CONTENT -->
+		<div id="outerbeforecontent">
+            <div class="container">
+            	<div class="row">
+                <div id="beforecontent" class="twelve columns">
+                    <div id="pagetitle-container">
+                    	<h1 class="pagetitle"><?php the_title() ?></h1>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- END BEFORE CONTENT -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+        
+        <!-- MAIN CONTENT -->
+        <div id="outermain">
+        	<div class="container">
+                <div class="row">
+                
+                    <section id="maincontent" class="nine columns positionleft">
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+                            <section class="content">
+								<?php echo apply_filters( 'the_content', $post->post_content); ?>
+                                
+                            </section>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-
-			<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+                    </section>
+                    
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
 <?php get_footer(); ?>

@@ -228,5 +228,28 @@ function registruj_cpt(){
 
 }
 
+function moj_shortcode(){
+	return '<div class="separator"></div>';
+}
+
+add_shortcode('sep',  'moj_shortcode');
+
+function vl($at, $content){
+	
+	return '<div style="width: 10px; height: 10px; background-color: '.$at['boja'].'"><h1>'.$content.'</h1></div>';
+}
+
+add_shortcode('vl', 'vl');
+
+
+// add new buttons
+add_filter('mce_buttons', 'myplugin_register_buttons');
+
+function myplugin_register_buttons($buttons) {
+   array_push($buttons, 'separator', 'myplugin');
+   return $buttons;
+}
+
+
 
   
